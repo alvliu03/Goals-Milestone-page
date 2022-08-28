@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Goals and Milestons.css">
+</head>
+<body>
+    <!-- <div id = "fakepopup" class = "fakepopup_checklist" style = "display: none;position: fixed;background-color: rgba(0, 0, 0, 0.5);z-index: 10000;top: 0px;left: 0px;right: 0px;bottom: 0px;text-align: left;" onclick = "hideChecklistPopup();return false;"> CLICK ME TO EXIT   -->
+        <div class = "checklist_container" style = "max-width:95%;border-radius: 25px;border: 2px solid #C0C0C0;position:relative;left:2.5%;overflow:hidden;background-color:#BEBEBE;"> <!-- Container that holds the checklist -->
+            <div id="myDiv" class="myHeader" style = "display:flex; justify-content:space-between;height:100px;">
+                <div class = "left_goal_checklist_header" style = "display: flex; align-items: center;height: 80px;"> 
+                    <img src="../img/icon_filter_card_ac.png" class="goal_img_icon"><h2 id="goal_text">My List</h2>   
+                </div>
+                            <div class = "right_goal_checklist_header" style = "display: flex; align-items: center;">
+                                <div class="cont" style = "text-align:right;">
+                                    <svg id = "circle_svg" width = "100px" height = "100px">
+                                        <circle class = "svg_track"></circle>
+                                        <circle class = "svg_indicator" id = "svg_indicator"></circle>
+                                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" stroke-width="2px" stroke="#FA8072" font-size="25px" id = "checklist_percent">75%</text>
+                                    </svg>
+                                </div>
+                                <div style = "font-size:20px;font-weight: bold;display: flex;"> <div id = "goal_progress_text" style = "display:inline-block;"> 15 </div> / <div id = "total_goal_progress_text">20</div>complete </div>
+                            </div>
+                        </div>
+                            <ul class = "toggleClick_list">
+                                <li>
+                                <input id="check01" type="checkbox" name="menu" />
+                                <label class = "checklist_label" for="check01">Down payment ▼<div class = "checklist_count" style = "margin-left:auto;" id = "checklist_count_1">3</div>/<div id = "goal_count1" class = "goal_count">3</div>complete</label>
+        
+                                    <ul class = "innertoggleClick_list" id = "innertoggleClick_1">
+                                        <div class = "tripledot_container" style = "width: 100%;text-align: right;padding-top: 2px;padding-right: 1em;">
+                                        <input class = "addinput" type="text" id="myInput1" placeholder="Enter New Goal!">
+                                        <span onclick="newElement(this, 1);" class="addBtn">Add</span>  
+                                            <div class="dropdown dropright">
+                                                <button class="dropdown_replace" type="button" id="dropdownMenu15" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style = "text-align:right;height:50px;"><img style="height:22px;width:auto;" src="../img/ellipsis_drop.png"></button><div class="dropdown-menu" aria-labelledby="dropdownMenu15" style="cursor: pointer; will-change: transform;"><form><p id="dropdown_settings15" class="dropdown-item dropdown_link" onclick="dropdownExpandGoal(15)">Settings ↓</p><p id="dropdown_share15" style="display:none" class="dropdown-item dropdown_link" onclick="alert('a')">Add</p></form></div>
+                                            </div>
+	                                    </div>
+                                        <li class = "checklist_li"><div class = "pressed">✔️ Stuff 1</div></li>
+                                        <li class = "checklist_li"><div class = "pressed">✔️ Stuff 2</div></li>
+                                        <li class = "checklist_li"><div class = "pressed">✔️ Stuff 3</div></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                <input id="check02" type="checkbox" name="menu" />
+                                <label class = "checklist_label" for="check02">Loan Qualifying ▼<div class = "checklist_count" style = "margin-left:auto;" id = "checklist_count_2">2</div>/<div id = "goal_count2" class = "goal_count">2</div>complete</label>
+                                    <ul class = "innertoggleClick_list" id = "innertoggleClick_2">
+                                    <div class = "tripledot_container" style = "width: 100%;text-align: right;padding-top: 2px;padding-right: 1em;">
+                                        <input class = "addinput" type="text" id="myInput2" placeholder="Enter New Goal!">
+                                        <span onclick="newElement(this, 2);" class="addBtn">Add</span>
+                                            <div class="dropdown dropright">
+                                                <button class="dropdown_replace" type="button" id="dropdownMenu15" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style = "text-align:right;height:50px;"><img style="height:22px;width:auto;" src="../img/ellipsis_drop.png"></button><div class="dropdown-menu" aria-labelledby="dropdownMenu15" style="cursor: pointer; will-change: transform;"><form><p id="dropdown_settings15" class="dropdown-item dropdown_link" onclick="dropdownExpandGoal(15)">Settings ↓</p><p id="dropdown_del15" style="display:none" class="dropdown-item dropdown_link" onclick="goalDel(15)">Edit</p><p id="dropdown_share15" style="display:none" class="dropdown-item dropdown_link" onclick="alert('a')">Add</p></form></div>
+                                            </div>
+	                                </div>
+                                        <li class = "checklist_li"><div class = "pressed">✔️ Stuff 1</div></li>
+                                        <li class = "checklist_li"><div class = "pressed">✔️ Stuff 2</div></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                <input id="check03" type="checkbox" name="menu" />
+                                <label class = "checklist_label" for="check03">Making a offer ▼<div class = "checklist_count" style = "margin-left:auto;" id = "checklist_count_3">2</div>/<div id = "goal_count3" class = "goal_count">3</div>complete</label>
+                                    <ul class = "innertoggleClick_list" id = "innertoggleClick_3">
+                                    <div class = "tripledot_container" style = "width: 100%;text-align: right;padding-top: 2px;padding-right: 1em;">
+                                        <input class = "addinput" type="text" id="myInput3" placeholder="Enter New Goal!">
+                                        <span onclick="newElement(this, 3);" class="addBtn">Add</span>
+                                            <div class="dropdown dropright">
+                                                <button class="dropdown_replace" type="button" id="dropdownMenu15" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style = "text-align:right;height:50px;"><img style="height:22px;width:auto;" src="../img/ellipsis_drop.png"></button><div class="dropdown-menu" aria-labelledby="dropdownMenu15" style="cursor: pointer; will-change: transform;"><form><p id="dropdown_settings15" class="dropdown-item dropdown_link" onclick="dropdownExpandGoal(15)">Settings ↓</p><p id="dropdown_del15" style="display:none" class="dropdown-item dropdown_link" onclick="goalDel(15)">Edit</p><p id="dropdown_share15" style="display:none" class="dropdown-item dropdown_link" onclick="alert('a')">Add</p></form></div>
+                                            </div>
+	                                </div>
+                                        <li class = "checklist_li"><div class = "pressed">✔️ Stuff 1</div></li>
+                                        <li class = "checklist_li"><div class = "pressed">✔️ Stuff 2</div></li>
+                                        <li class = "checklist_li"><div>✔️ Stuff 3</div></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                <input id="check04" type="checkbox" name="menu" />
+                                <label class = "checklist_label" for="check04">Narrowing Down Location ▼<div class = "checklist_count" style = "margin-left:auto;" id = "checklist_count_4" class = "goal_count">3</div>/<div id = "goal_count4">4</div> complete</label>
+                                    <ul class = "innertoggleClick_list" id = "innertoggleClick_4">
+                                    <div class = "tripledot_container" style = "width: 100%;text-align: right;padding-top: 2px;padding-right: 1em;">
+                                        <input class = "addinput" type="text" id="myInput4" placeholder="Enter New Goal!">
+                                        <span onclick="newElement(this, 4);" class="addBtn">Add</span>
+                                            <div class="dropdown dropright">
+                                                <button class="dropdown_replace" type="button" id="dropdownMenu15" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style = "text-align:right;height:50px;"><img style="height:22px;width:auto;" src="../img/ellipsis_drop.png"></button><div class="dropdown-menu" aria-labelledby="dropdownMenu15" style="cursor: pointer; will-change: transform;"><form><p id="dropdown_settings15" class="dropdown-item dropdown_link" onclick="dropdownExpandGoal(15)">Settings ↓</p><p id="dropdown_del15" style="display:none" class="dropdown-item dropdown_link" onclick="goalDel(15)">Edit</p><p id="dropdown_share15" style="display:none" class="dropdown-item dropdown_link" onclick="alert('a')">Add</p></form></div>
+                                            </div>
+	                                </div>
+                                        <li class = "checklist_li"><div class = "pressed">✔️ Stuff 1</div></li>
+                                        <li class = "checklist_li"><div class = "pressed">✔️ Stuff 2</div></li>
+                                        <li class = "checklist_li"><div class = "pressed">✔️ Stuff 3</div></li>
+                                        <li class = "checklist_li"><div>✔️ Stuff 4</div></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                <input id="check05" type="checkbox" name="menu" />
+                                <label class = "checklist_label" for="check05">Affording ▼<div class = "checklist_count" style = "margin-left:auto;" id = "checklist_count_5">5</div>/<div id = "goal_count5" class = "goal_count">5</div>complete</label>
+                                    <ul class = "innertoggleClick_list" id = "innertoggleClick_5">
+                                    <div class = "tripledot_container" style = "width: 100%;text-align: right;padding-top: 2px;padding-right: 1em;">
+                                        <input class = "addinput" type="text" id="myInput5" placeholder="Enter New Goal!">
+                                        <span onclick="newElement(this, 5);" class="addBtn">Add</span>
+                                            <div class="dropdown dropright">
+                                                <button class="dropdown_replace" type="button" id="dropdownMenu15" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style = "text-align:right;height:50px;"><img style="height:22px;width:auto;" src="../img/ellipsis_drop.png"></button><div class="dropdown-menu" aria-labelledby="dropdownMenu15" style="cursor: pointer; will-change: transform;"><form><p id="dropdown_settings15" class="dropdown-item dropdown_link" onclick="dropdownExpandGoal(15)">Settings ↓</p><p id="dropdown_del15" style="display:none" class="dropdown-item dropdown_link" onclick="goalDel(15)">Edit</p><p id="dropdown_share15" style="display:none" class="dropdown-item dropdown_link" onclick="alert('a')">Add</p></form></div>
+                                            </div>
+	                                </div>
+                                        <li class = "checklist_li"><div class = "pressed">✔️ Stuff 1</div></li>
+                                        <li class = "checklist_li"><div class = "pressed">✔️ Stuff 2</div></li>
+                                        <li class = "checklist_li"><div class = "pressed">✔️ Stuff 3</div></li>
+                                        <li class = "checklist_li"><div class = "pressed">✔️ Stuff 4</div></li>
+                                        <li class = "checklist_li"><div class = "pressed">✔️ Stuff 5</div></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                <input id="check06" type="checkbox" name="menu" />
+                                <label class = "checklist_label" for="check06">Expanding Further ▼<div class = "checklist_count" style = "margin-left:auto;" id = "checklist_count_6">0</div>/<div id = "goal_count6" class = "goal_count">3</div>complete</label>
+                                    <ul class = "innertoggleClick_list" id = "innertoggleClick_6">
+                                    <div class = "tripledot_container" style = "width: 100%;text-align: right;padding-top: 2px;padding-right: 1em;">
+                                        <input class = "addinput" type="text" id="myInput6" placeholder="Enter New Goal!">
+                                        <span onclick="newElement(this, 6);" class="addBtn">Add</span>
+                                            <div class="dropdown dropright">
+                                                <button class="dropdown_replace" type="button" id="dropdownMenu15" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style = "text-align:right;height:50px;"><img style="height:22px;width:auto;" src="../img/ellipsis_drop.png"></button><div class="dropdown-menu" aria-labelledby="dropdownMenu15" style="cursor: pointer; will-change: transform;"><form><p id="dropdown_settings15" class="dropdown-item dropdown_link" onclick="dropdownExpandGoal(15)">Settings ↓</p><p id="dropdown_del15" style="display:none" class="dropdown-item dropdown_link" onclick="goalDel(15)">Edit</p><p id="dropdown_share15" style="display:none" class="dropdown-item dropdown_link" onclick="alert('a')">Add</p></form></div>
+                                            </div>
+	                                </div>
+                                        <li class = "checklist_li"><div>✔️ Stuff 1</div></li>
+                                        <li class = "checklist_li"><div>✔️ Stuff 2</div></li>
+                                        <li class = "checklist_li"><div>✔️ Stuff 3</div></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>    
+                    </div>
+    </div>
+<script>
+    //Increment or decrease goal count according to the pressed values. 
+    //Also NOTE that the increments are front end side - currently no connection to the backend as of yet.
+    function incrementGoalCounter(element, isIncrementing, adjustVal = false){
+    //Have a variable that lets function know if it is incrementing or reducing
+    //console.log($(this).attr('id'));
+    //console.log($(element).attr('id'));
+
+    //console.log('We are incrementing ' + isIncrementing);
+    
+
+
+    var attr = $(element).attr('id');
+        if (typeof attr !== 'undefined' && attr !== false) {    //function call to increment the subsection goals
+            switch($(element).attr('id')) { //switch cases for the main milestones (demo here is 6 cases)
+                case 'innertoggleClick_1': //if the id is 1, increment count on 1, if it's 2, increment on 2 and etc.
+                    //console.log("entering switch case 1");
+                    incrementHelper('checklist_count_1', isIncrementing, false, 1);
+                    break;
+                case 'innertoggleClick_2':
+                    incrementHelper('checklist_count_2', isIncrementing, false, 2);
+                    break;
+                case 'innertoggleClick_3':
+                    incrementHelper('checklist_count_3', isIncrementing, false, 3);
+                    break;
+                case 'innertoggleClick_4':
+                    incrementHelper('checklist_count_4', isIncrementing, false,  4);
+                    break;
+                case 'innertoggleClick_5':
+                    incrementHelper('checklist_count_5', isIncrementing, false, 5);
+                    break;
+                case 'innertoggleClick_6':
+                    incrementHelper('checklist_count_6', isIncrementing, false, 6);
+                    break;    
+            }
+        }
+        incrementHelper('goal_progress_text', isIncrementing, adjustVal);     
+    }
+
+    //Note that the created/deleted goals are not saved because they are hard coded and not utilizing the database data. 
+    function incrementHelper(element, isIncrementing, adjustVal = false, num = -1){ //increment or decrease count (helper function) adjust val refers to adjusting total progress count   
+
+        var currCount = document.getElementById(element); //id of current milestone count completed
+        var total_progress_count = document.getElementById('total_goal_progress_text'); //id of overall milestones
+        
+        if(num !== -1){ //if we are grabbing an id and updating values, grab values and modify
+            var goal_count_id = 'goal_count' + num;
+            var goal_count_val = document.getElementById(goal_count_id).innerHTML;
+        }
+
+        //console.log("Element: " + element + ", isIncrementing: " + isIncrementing + ", adjustVal: " + adjustVal + ",num = " + num);
+
+        var number = currCount.innerHTML;
+        var totalNumber = total_progress_count.innerHTML;
+
+        if(isIncrementing && !adjustVal){
+            number++;
+            document.getElementById(element).innerHTML = number;
+
+        }else if(!isIncrementing && !adjustVal){
+            number--;
+            document.getElementById(element).innerHTML = number;
+
+        }else if(adjustVal && isIncrementing){ //new element added, increment number and number total (this also included the overall number and overall total)     
+            //number++; //increments
+            totalNumber++;
+            goal_count_val++;
+
+            document.getElementById('total_goal_progress_text').innerHTML = totalNumber; //modify innerHTML
+            document.getElementById(goal_count_id).innerHTML = goal_count_val;
+           
+            //total count based on subsection of goals needs to be adjusted as well
+        } else if(adjustVal && !isIncrementing){
+            totalNumber--;
+            //goal_count_val--;
+
+            document.getElementById('total_goal_progress_text').innerHTML = totalNumber; //modify innerHTML
+            //document.getElementById(goal_count_id).innerHTML = goal_count_val;
+        }
+        currCount.innerHTML = number;
+
+        if(element === "goal_progress_text"){
+            var progressBar = document.getElementById("svg_indicator");
+            //Calculate offset based on the new incrementing number
+            var newPixelBar = 251.2 * ((100 - (number / totalNumber) * 100) / 100);
+
+            var percentBar = Math.round((number / totalNumber) * 100);
+
+            var percent_val = document.getElementById("checklist_percent");
+            percent_val.innerHTML = percentBar + '%';
+            //console.log(percentBar);
+            //console.log(newPixelBar);
+
+            progressBar.style.strokeDashoffset  = newPixelBar;
+        }
+    }
+
+    // Create a new list item when clicking on the "Add" button.
+    function newElement(element, idNum) {
+        var li = document.createElement("li");
+        var div = document.createElement("div");
+        div.addEventListener('click', toggleHighlight);
+        li.classList.add('checklist_li');
+
+        //gran the ID of the textvalue from button.
+        var myInputID = "myInput" + idNum;
+        var inputValue = document.getElementById(myInputID).value;
+
+        //pre-insert checkmark to the string
+        var full_string = "✔️ ";
+        full_string += inputValue;
+
+        var t = document.createTextNode(full_string);
+        var ulID = document.getElementById("innertoggleClick_" + idNum);
+
+        li.appendChild(div);
+        div.appendChild(t);
+        if (inputValue === '') {
+            alert("You must write something!");
+        } else {
+            ulID.appendChild(li);
+        }
+        document.getElementById(myInputID).value = "";
+
+        var span = document.createElement("SPAN");
+        var txt = document.createTextNode("\u00D7");
+        span.className = "close";
+        span.appendChild(txt);
+        li.appendChild(span);
+
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function() {
+            var div = this.parentElement;
+            div.style.display = "none";
+            //Subtract from goals
+            }
+        }
+        //call incrementHelper() to adjust the values (total goals) accordingly.
+        
+        incrementHelper('goal_progress_text', true, true, idNum);     
+    }
+
+    function toggleHighlight(){ //event listener for created divs by the user for goals on the goal checklist
+        uiSelector = $(this).closest(".innertoggleClick_list"); //determine where the div came from and grab the closest ui.
+        //$(this).css({"color": "red", "border": "2px solid red"});
+        
+        $(this).toggleClass('pressed');//toggle the class on the div
+
+        var selected = $(this).hasClass('pressed'); //bool to check if pressed or not pressed
+
+        incrementGoalCounter(uiSelector,selected); //call function to modify counter.
+    }
+
+    //toggle highlight event listener - for the DUMMY DATA already posted 
+    $('.innertoggleClick_list li div').on('click', function(e) {
+
+    uiSelector = $(this).closest(".innertoggleClick_list");
+    //$(this).closest(".innertoggleClick_list").css({"color": "red", "border": "2px solid red"}); //testing code to visually see selectors
+
+    $(this).toggleClass('pressed');
+
+    var selected = $(this).hasClass('pressed');
+
+    incrementGoalCounter(uiSelector,selected); //call function to modify counter.        
+    });
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none"; //Post note - noticed that this code simply hides the div, but should be deleted for goals
+    //should be subtracted from goal count (currently is not)
+  }
+}
+
+var myNodelist = document.getElementsByClassName("checklist_li");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+
+</script>
+</body>
+</html>

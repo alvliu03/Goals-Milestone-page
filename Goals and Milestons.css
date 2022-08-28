@@ -1,0 +1,151 @@
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Style the list items */
+.checklist_li{
+    cursor: pointer;
+    position: relative;
+    padding: 1rem;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+.innertoggleClick_list div{
+    transition: 0.2s;
+}
+
+.pressed{
+    background: greenyellow;
+    transition: 0.2s;
+    padding: 0.5em;
+
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+.toggleClick_list li{
+background: #BEBEBE;
+}
+
+ul li a{
+color:black;
+display: block;
+text-decoration: none;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+input, ul.innertoggleClick_list {
+    display: none;
+  }
+  
+  /*position the label*/
+  label {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    background: #BEBEBE;
+    padding: 1rem;
+    font-size: 18px;
+    transition: 0.2s;    
+}
+  
+  /*show the innertoggleClick_list when input is checked*/
+  input:checked~ul.innertoggleClick_list {
+    display: block;
+  }
+
+
+/* Style the header */
+.myHeader {
+background-color: #00bfff;
+padding: 30px 40px;
+color: white;
+/*text-align: center;  Hidden for now; Will work on having text to the left and progress circle on the right.*/ 
+}
+
+.svg_indicator, .svg_track {
+    cx: 50px;
+    cy: 50px;
+    r: 40px;
+    fill: transparent;
+    stroke-width: 10px;
+}
+
+/* Some color to highlight the rings */
+.svg_track {
+    stroke: #ddd;
+}
+
+.svg_indicator {
+    stroke: #07c;
+    stroke-dasharray: 251.2px;
+    stroke-dashoffset: 62.8px;
+    transition:.5s;
+    /*Static circle progress bar
+    To calculate:
+        arcOffset = arcLength * ((100 - progress)/100) 
+    */
+}
+
+.toggleClick_list label{
+    border-bottom: 2.5px double black;
+    border-top: 2.5px double black;
+}
+
+.checklist_label{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* .innertoggleClick_list {
+        list-style-type: none;
+        columns: 2;
+} */
+
+/* Style the close button */
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+  }
+  
+  .close:hover {
+    background-color: #f44336;
+    color: white;
+  }
+
+.addinput {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 70%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+    display:block;
+    position:relative;
+    left:1%;
+}
+  
+/* Style the "Add" button */
+.addBtn {
+    padding: 10px;
+    width: 20%;
+    background: #d9d9d9;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+  }
+  
+#total_goal_progress_text:after, .goal_count{ /* Add space */
+    content: "\00a0 ";
+}  
